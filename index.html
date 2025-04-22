@@ -1,140 +1,164 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shamillshaanu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muhammed Shamil Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
-      font-family: 'Fira Code', monospace;
       box-sizing: border-box;
+      font-family: 'Fira Code', monospace;
     }
+
     body {
-      background: linear-gradient(to right, #000000, #330000);
-      color: #ff4d4d;
-      line-height: 1.6;
-      transition: all 0.3s ease-in-out;
+      background: linear-gradient(to right, #ffffff, #e0f7ff);
+      color: #003049;
       overflow-x: hidden;
     }
+
     header {
-      text-align: center;
-      padding: 60px 20px 20px;
+      text-align: left;
+      padding: 60px 40px 20px;
       animation: fadeInDown 1s ease-in-out;
     }
+
+    header p.small {
+      font-size: 1rem;
+      color: #555;
+    }
+
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      color: #003049;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #ff9999;
+
+    header p.large {
+      font-size: 1.1rem;
+      color: #0077b6;
     }
+
     .navbar {
       position: fixed;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      background: #1a1a1a;
+      background: #ffffff;
       border-radius: 40px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+      box-shadow: 0 0 20px rgba(0, 119, 182, 0.3);
       padding: 10px 25px;
       display: flex;
       gap: 30px;
       z-index: 10;
     }
+
     .navbar a {
       text-decoration: none;
-      color: #fff;
+      color: #0077b6;
       padding: 10px 20px;
       border-radius: 25px;
       transition: 0.4s;
     }
+
     .navbar a:hover {
-      background-color: #ff4d4d;
-      color: #000;
+      background-color: #caf0f8;
+      color: #03045e;
     }
+
     .contact-btn {
       position: fixed;
       top: 20px;
       right: 20px;
-      background-color: #ff4d4d;
-      color: #000;
+      background-color: #0077b6;
+      color: #ffffff;
       border-radius: 50px;
       padding: 10px 25px;
       font-weight: bold;
-      box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
-      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0, 119, 182, 0.8);
       text-decoration: none;
+      transition: 0.3s;
     }
-    .contact-btn i {
-      margin-right: 5px;
-    }
+
     .contact-btn:hover {
-      background-color: #fff;
-      color: #ff4d4d;
+      background-color: #ffffff;
+      color: #0077b6;
     }
+
     section {
       display: none;
       padding: 80px 20px;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
     }
+
     section.active {
       display: block;
     }
+
+    .home-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .profile-pic img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid #0077b6;
+    }
+
+    .home-text {
+      max-width: 500px;
+    }
+
     h2 {
       font-size: 1.8rem;
       margin-bottom: 20px;
-      color: #ff4d4d;
+      color: #0077b6;
     }
+
     ul {
       list-style-type: square;
       padding-left: 20px;
     }
-    a {
-      color: #ff4d4d;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .about p,
-    .writeups p {
-      color: #00ff00;
-    }
-    .contact-options {
-      background-color: #ffffff;
-      color: #000000;
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: pink;
+      color: white;
       padding: 20px;
-      margin-top: 30px;
+      border-radius: 10px;
+      z-index: 20;
+      font-weight: bold;
     }
-    .social-icons li {
-      list-style: none;
-      margin-bottom: 10px;
+
+    #contact {
+      background-color: #fdf5e6;
+      color: #000;
     }
-    .social-icons i {
-      margin-right: 8px;
-      color: #ff4d4d;
+
+    #contact h2 {
+      color: #0077b6;
     }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      color: #ff9999;
+      color: #023e8a;
     }
-    .profile-pic {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .profile-pic img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 3px solid #ff4d4d;
-    }
+
     @keyframes fadeInDown {
       from {
         opacity: 0;
@@ -148,12 +172,13 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Shamil</h1>
-    <p>Aspiring Ethical Hacker | CEH in Progress</p>
+  <header id="home-header">
+    <p class="small">Hello It's Me</p>
+    <h1>MUHAMMED SHAMIL</h1>
+    <p class="large">Future Ethical Hacker | CEH in Progress | Learning Cybersecurity Hands-On</p>
   </header>
 
-  <a href="#contact" class="contact-btn"><i class="fas fa-envelope"></i> Contact</a>
+  <a href="#contact" class="contact-btn" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a>
 
   <nav class="navbar">
     <a href="#home" onclick="showSection('home')">Home</a>
@@ -161,54 +186,86 @@
     <a href="#skills" onclick="showSection('skills')">Skills</a>
   </nav>
 
+  <div id="popup" class="popup">I'm a student in ethical hacking and cybersecurity, so wait for the future. I'm progressing through the CEH certification.</div>
+
   <section id="home" class="active section">
-    <div class="profile-pic">
-      <img src="profile.jpg" alt="Profile Picture" />
+    <div class="home-container">
+      <div class="profile-pic">
+        <img src="profile.jpg" alt="Profile Picture" />
+      </div>
+      <div class="home-text">
+        <p>I'm <strong>MUHAMMED SHAMIL</strong>, a passionate cybersecurity student focused on ethical hacking, learning daily from hands-on platforms and real-world CTFs. I'm currently progressing through the CEH certification and studying the final parts of cybersecurity basics. I also enjoy working in Linux and exploring new tools.</p>
+        <br>
+        <button onclick="showPopup()">Download CV</button>
+        <a href="mailto:shaamill1021@gmail.com" style="margin-left: 15px; background: #0077b6; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none;">Hire Me</a>
+      </div>
     </div>
-    <h2>About Me</h2>
-    <p>Hi, I’m <strong>Muhammed Shamil</strong>, a student passionate about ethical hacking and cybersecurity. I'm currently progressing through the CEH certification and studying the final parts of cybersecurity basics. I also enjoy working in Linux and exploring new tools.</p>
   </section>
 
-  <section class="about section" id="about">
+  <section class="section" id="about">
     <h2>Why Ethical Hackers Are Important</h2>
     <p>Ethical hackers are important because they help protect computer systems and networks by finding security weaknesses before real criminals can exploit them. They use the same skills as malicious hackers, but their goal is to improve safety, not cause harm. By testing and identifying vulnerabilities, ethical hackers help organizations fix problems and prevent data breaches or cyberattacks. Their work keeps sensitive information safe and helps build stronger defenses against cyber threats. Without ethical hackers, many security issues could go unnoticed until it’s too late.</p>
-
-    <div class="contact-options">
-      <ul class="social-icons">
-        <li><a href="https://www.linkedin.com/in/shamill-shaanu-82224435b" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
-        <li><a href="https://tryhackme.com/p/shaamill" target="_blank"><i class="fas fa-user-secret"></i>TryHackMe</a></li>
-        <li><a href="https://app.hackthebox.com/profile/2358770" target="_blank"><i class="fas fa-lock"></i>Hack The Box</a></li>
-        <li><a href="https://github.com/shamillshaanuh" target="_blank"><i class="fab fa-github"></i>GitHub</a></li>
-      </ul>
-    </div>
   </section>
 
-  <section class="skills section" id="skills">
+  <section class="section" id="skills">
     <h2>Skills</h2>
     <ul>
+      <li>Ethical Hacking</li>
       <li>Linux</li>
-      <li>Networking</li>
-      <li>Nmap</li>
+      <li>Networking Fundamentals</li>
+      <li>SQL Injection (Beginner)</li>
+      <li>Cybersecurity Fundamentals</li>
+      <li>Information Security</li>
     </ul>
-
-    <section class="writeups">
-      <h2>Writeups & Projects</h2>
-      <p>Coming soon... I’m working on CTFs and real-world challenges. Stay tuned!</p>
-    </section>
   </section>
+
+  
+<section class="section" id="contact" style="background: #e0f7ff; padding: 60px 0;">
+  <div style="max-width: 700px; margin: auto; background: #1c1c2b; border-radius: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 40px;">
+    <h2 style="text-align: center; color: white; font-size: 2.4em; font-weight: bold;">
+      Contact <span style="color: #00d2ff;">Me!</span>
+    </h2>
+
+    <form style="margin-top: 30px;">
+      <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+        <input type="text" placeholder="FIRST NAME" style="flex:1; padding: 15px; border-radius: 10px; border: none; background: #2d2d3e; color: white; font-size: 1em;">
+        <input type="text" placeholder="LAST NAME" style="flex:1; padding: 15px; border-radius: 10px; border: none; background: #2d2d3e; color: white; font-size: 1em;">
+      </div>
+      <div style="margin-bottom: 20px;">
+        <input type="text" placeholder="Mob.Number" style="width: 100%; padding: 15px; border-radius: 10px; border: none; background: #2d2d3e; color: white; font-size: 1em; margin-bottom: 15px;">
+        <input type="email" placeholder="Email Address" style="width: 100%; padding: 15px; border-radius: 10px; border: none; background: #2d2d3e; color: white; font-size: 1em;">
+      </div>
+      <textarea placeholder="YOUR MESSAGE" style="width: 100%; height: 150px; padding: 15px; border-radius: 10px; border: none; background: #2d2d3e; color: white; font-size: 1em; resize: none;"></textarea>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button type="submit" style="padding: 12px 30px; background-color: #00d2ff; color: white; font-weight: bold; border: none; border-radius: 10px; cursor: pointer;">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
 
   <footer>
     <p>📍MUHAMMED SHAMIL</p>
   </footer>
 
   <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      const activeSection = document.getElementById(sectionId);
-      if (activeSection) activeSection.classList.add('active');
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      if (id !== 'home') {
+        document.getElementById('home-header').style.display = 'none';
+      } else {
+        document.getElementById('home-header').style.display = 'block';
+      }
+    }
+
+    function showPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'block';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 4000);
     }
   </script>
 </body>
